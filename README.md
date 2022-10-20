@@ -17,8 +17,9 @@ A library to use other apps as a key to unlock features in the primary app on An
 
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Sponsor](#sponsor)
-  - [Dependency](#dependency)
+    - [Broadcast](#broadcast)
+    - [Sponsor](#sponsor)
+    - [Dependency](#dependency)
 - [License](#license)
 
 ---
@@ -43,6 +44,16 @@ in other (client) apps. It has utility methods to validate a key at runtime with
 apps, so they must be signed with the same `signatures` to validate an installed key on the device.
 
 > For a complete reference, please read the [documentation][documentation].
+
+### Broadcast
+
+Broadcast the key event on successful validation to notify key apps so that they can do
+the required work. In most cases, it should hide the icon from the app launcher.
+
+```java
+// Broadcast the activate intent from the client app.
+DynamicKeyUtils.broadcast(context, KEY_PACKAGE, Key.Intent.ACTION_ACTIVATE);
+```
 
 ### Sponsor
 
