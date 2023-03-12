@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Pranav Pandey
+ * Copyright 2022-2023 Pranav Pandey
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ buildscript {
             'minSdk'     : 14,
             'targetSdk'  : 33,
             'buildTools' : '33.0.2',
-            'preferences': '2.2.2'
+            'preferences': '2.2.3'
     ]
 
     repositories {
@@ -66,8 +66,8 @@ ext {
     mavenDir = 'com/pranavpandey/android'
     mavenArtifactId = 'dynamic-key'
     mavenInceptionYear = '2022'
-    mavenVersion = '1.0.0'
-    mavenVersionCode = 1
+    mavenVersion = '1.0.1'
+    mavenVersionCode = 2
 
     developerId = 'pranavpandey'
     developerName = 'Pranav Pandey'
