@@ -20,7 +20,8 @@ buildscript {
             'minSdk'     : 14,
             'targetSdk'  : 34,
             'buildTools' : '34.0.0',
-            'preferences': '2.2.3'
+            'kotlin'     : '1.8.22',
+            'preferences': '2.3.0'
     ]
 
     repositories {
