@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Copyright 2022-2024 Pranav Pandey
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	   http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<resources>
+
+    <!-- Keywords -->
+    <string name="adk_buy">Acheter</string>
+    <string name="adk_purchase">Achat</string>
+
+    <!-- License -->
+    <string name="adk_app_key_buy_desc">Achetez %1$s sur %2$s pour déverrouiller les fonctionnalités suivantes :</string>
+    <string name="adk_app_key_buy_desc_gen">Achetez %1$s sur %2$s pour déverrouiller toutes les fonctionnalités.</string>
+    <string name="adk_app_key_installed">Installée</string>
+    <string name="adk_app_key_installed_desc">Merci d\'avoir acheté le %1$s. Désormais, les fonctionnalités suivantes sont disponibles :</string>
+    <string name="adk_app_key_installed_desc_gen">Merci d\'avoir acheté le %1$s. Maintenant, toutes les fonctionnalités sont disponibles pour utilisation.</string>
+    <string name="adk_app_key_not_installed">Pas installé</string>
+    <string name="adk_app_key_not_installed_desc">%1$s n\'est pas installé. Achetez-le sur %2$s pour déverrouiller les fonctionnalités suivantes :</string>
+    <string name="adk_app_key_not_installed_desc_gen">%1$s n\'est pas installé. Achetez-le sur %2$s pour déverrouiller toutes les fonctionnalités.</string>
+    <string name="adk_app_key_removed_desc">%1$s a été supprimé. Veuillez l\'installer à nouveau pour utiliser les fonctionnalités suivantes :</string>
+    <string name="adk_app_key_removed_desc_gen">%1$s a été supprimé. Veuillez l\'installer à nouveau pour utiliser toutes les fonctionnalités.</string>
+
+
+</resources>

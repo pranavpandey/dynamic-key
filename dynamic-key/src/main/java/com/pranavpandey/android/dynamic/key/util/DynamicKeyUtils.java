@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Pranav Pandey
+ * Copyright 2022-2024 Pranav Pandey
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,10 +24,14 @@ import android.content.pm.ResolveInfo;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 
 import com.pranavpandey.android.dynamic.key.Key;
+import com.pranavpandey.android.dynamic.key.R;
 import com.pranavpandey.android.dynamic.preferences.DynamicPreferences;
+import com.pranavpandey.android.dynamic.util.DynamicDeviceUtils;
 import com.pranavpandey.android.dynamic.util.DynamicLinkUtils;
+import com.pranavpandey.android.dynamic.util.product.DynamicFlavor;
 
 import java.util.List;
 
@@ -35,6 +39,150 @@ import java.util.List;
  * Helper class to perform key related operations.
  */
 public class DynamicKeyUtils {
+
+    /**
+     * Get the description string resource according to the key status.
+     *
+     * @param status The key status to be used.
+     *
+     * @return Returns the description string resource according to the key status.
+     *
+     * @see Key.Status
+     */
+    public static @StringRes int getDescriptionRes(@Key.Status int status) {
+        switch (status) {
+            case Key.Status.AVAILABLE:
+            case Key.Status.ACTIVATED:
+                return R.string.adk_app_key_installed_desc;
+            case Key.Status.NOT_FOUND:
+                return R.string.adk_app_key_not_installed_desc;
+            case Key.Status.REMOVED:
+                return R.string.adk_app_key_removed_desc;
+            default:
+                return R.string.adk_app_key_buy_desc;
+        }
+    }
+
+    /**
+     * Get the description string according to the key status.
+     *
+     * @param status The key status to be used.
+     * @param store The optional store string to be used.
+     *
+     * @return Returns the description string according to the key status.
+     *
+     * @see Key.Status
+     * @see R.string#adk_app_key_buy_desc
+     * @see R.string#adk_app_key_not_installed_desc
+     */
+    public static @NonNull String getDescription(@NonNull Context context,
+            @Key.Status int status , @Nullable String store) {
+        switch (status) {
+            case Key.Status.AVAILABLE:
+            case Key.Status.ACTIVATED:
+            case Key.Status.REMOVED:
+                return String.format(context.getString(getDescriptionRes(status)),
+                        context.getString(R.string.adk_app_key));
+            case Key.Status.NOT_FOUND:
+            default:
+                return String.format(context.getString(getDescriptionRes(status)),
+                        context.getString(R.string.adk_app_key), store);
+        }
+    }
+
+    /**
+     * Get the description string according to the key status.
+     *
+     * @param status The key status to be used.
+     *
+     * @return Returns the description string according to the key status.
+     *
+     * @see #getDescription(Context, int, String)
+     */
+    public static @NonNull String getDescription(
+            @NonNull Context context, @Key.Status int status) {
+        if (DynamicLinkUtils.isGMSExists(context)) {
+            return getDescription(context, status,
+                    context.getString(R.string.adu_store_google_play));
+        } else if (DynamicDeviceUtils.isSamsungOneUI()) {
+            return getDescription(context, status,
+                    context.getString(R.string.adu_store_samsung_galaxy_store));
+        }
+
+        return getDescription(context, status, context.getString(R.string.adu_store));
+    }
+
+    /**
+     * Get the general description string resource according to the key status.
+     *
+     * @param status The key status to be used.
+     *
+     * @return Returns the general description string resource according to the key status.
+     *
+     * @see Key.Status
+     */
+    public static @StringRes int getDescriptionGeneralRes(@Key.Status int status) {
+        switch (status) {
+            case Key.Status.AVAILABLE:
+            case Key.Status.ACTIVATED:
+                return R.string.adk_app_key_installed_desc_gen;
+            case Key.Status.NOT_FOUND:
+                return R.string.adk_app_key_not_installed_desc_gen;
+            case Key.Status.REMOVED:
+                return R.string.adk_app_key_removed_desc_gen;
+            default:
+                return R.string.adk_app_key_buy_desc_gen;
+        }
+    }
+
+    /**
+     * Get the general description string according to the key status.
+     *
+     * @param status The key status to be used.
+     * @param store The optional store string to be used.
+     *
+     * @return Returns the general description string according to the key status.
+     *
+     * @see Key.Status
+     * @see R.string#adk_app_key_buy_desc_gen
+     * @see R.string#adk_app_key_not_installed_desc_gen
+     */
+    public static @NonNull String getDescriptionGeneral(@NonNull Context context,
+            @Key.Status int status, @Nullable String store) {
+        switch (status) {
+            case Key.Status.AVAILABLE:
+            case Key.Status.ACTIVATED:
+            case Key.Status.REMOVED:
+                return String.format(context.getString(getDescriptionGeneralRes(status)),
+                        context.getString(R.string.adk_app_key));
+            case Key.Status.NOT_FOUND:
+            default:
+                return String.format(context.getString(getDescriptionGeneralRes(status)),
+                        context.getString(R.string.adk_app_key), store);
+        }
+    }
+
+    /**
+     * Get the general description string according to the key status.
+     *
+     * @param status The key status to be used.
+     *
+     * @return Returns the general description string according to the key status.
+     *
+     * @see #getDescriptionGeneral(Context, int, String)
+     */
+    public static @NonNull String getDescriptionGeneral(
+            @NonNull Context context, @Key.Status int status) {
+        if (DynamicLinkUtils.isGMSExists(context)) {
+            return getDescriptionGeneral(context, status,
+                    context.getString(R.string.adu_store_google_play));
+        } else if (DynamicDeviceUtils.isSamsungOneUI()) {
+            return getDescriptionGeneral(context, status,
+                    context.getString(R.string.adu_store_samsung_galaxy_store));
+        }
+
+        return getDescriptionGeneral(context, status, context.getString(R.string.adu_store));
+    }
 
     /**
      * Matches the signature of two packages.
@@ -156,7 +304,33 @@ public class DynamicKeyUtils {
     }
 
     /**
-     * Rate the app or key (if installed) on the Google Play.
+     * Rate the app or key (if installed) on Google Play.
+     *
+     * @param context The context to get the package name.
+     * @param isKey {@code true} if the key package is installed.
+     * @param keyPackage The key package to be rated.
+     * @param flavor The product flavor to be used.
+     *
+     * @return {@code true} on successful operation.
+     *
+     * @see DynamicLinkUtils#rateApp(Context, String)
+     * @see DynamicLinkUtils#viewApp(Context, String, String)
+     */
+    public static boolean rateAppOrKey(@Nullable Context context, boolean isKey,
+            @Nullable String keyPackage, @DynamicFlavor String flavor) {
+        if (context == null) {
+            return false;
+        }
+
+        if (isKey && keyPackage != null) {
+            return DynamicLinkUtils.viewApp(context, keyPackage, flavor);
+        } else {
+            return DynamicLinkUtils.rateApp(context, flavor);
+        }
+    }
+
+    /**
+     * Rate the app or key (if installed) on Google Play.
      *
      * @param context The context to get the package name.
      * @param isKey {@code true} if the key package is installed.
@@ -164,20 +338,11 @@ public class DynamicKeyUtils {
      *
      * @return {@code true} on successful operation.
      *
-     * @see DynamicLinkUtils#rateApp(Context)
-     * @see DynamicLinkUtils#viewInGooglePlay(Context, String)
+     * @see #rateAppOrKey(Context, boolean, String, String)
      */
     public static boolean rateAppOrKey(@Nullable Context context,
             boolean isKey, @Nullable String keyPackage) {
-        if (context == null) {
-            return false;
-        }
-
-        if (isKey && keyPackage != null) {
-            return DynamicLinkUtils.viewInGooglePlay(context, keyPackage);
-        } else {
-            return DynamicLinkUtils.rateApp(context);
-        }
+        return rateAppOrKey(context, isKey, keyPackage, DynamicFlavor.DEFAULT);
     }
 
     /**
@@ -201,6 +366,19 @@ public class DynamicKeyUtils {
      */
     public static @NonNull String getKey(@Nullable String base, @NonNull String key) {
         return getBaseKey(base) + key;
+    }
+
+    /**
+     * Returns the key concatenated with the base key.
+     *
+     * @param key The key to be concatenated.
+     *
+     * @return The key concatenated with the base key.
+     *
+     * @see #getKey(String, String)
+     */
+    public static @NonNull String getKey(@NonNull String key) {
+        return getKey(null, key);
     }
 
     /**

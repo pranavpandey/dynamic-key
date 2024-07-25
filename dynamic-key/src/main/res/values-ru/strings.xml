@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Copyright 2022-2024 Pranav Pandey
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	   http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<resources>
+
+    <!-- Keywords -->
+    <string name="adk_buy">Купить</string>
+    <string name="adk_purchase">Comprar</string>
+
+    <!-- License -->
+    <string name="adk_app_key_buy_desc">Купите %1$s в %2$s, чтобы разблокировать следующие функции:</string>
+    <string name="adk_app_key_buy_desc_gen">Buy %1$s from %2$s to unlock all the features.</string>
+    <string name="adk_app_key_installed">Установлен</string>
+    <string name="adk_app_key_installed_desc">Спасибо за покупку %1$s. Теперь для использования доступны следующие функции:</string>
+    <string name="adk_app_key_installed_desc_gen">Спасибо за покупку %1$s. Теперь все функции доступны для использования.</string>
+    <string name="adk_app_key_not_installed">Не установлен</string>
+    <string name="adk_app_key_not_installed_desc">%1$s не установлен. Купите его в %2$s, чтобы разблокировать следующие функции:</string>
+    <string name="adk_app_key_not_installed_desc_gen">%1$s не установлен. Купите его в %2$s, чтобы разблокировать все функции.</string>
+    <string name="adk_app_key_removed_desc">%1$s удален. Пожалуйста, установите его снова, чтобы использовать следующие функции:</string>
+    <string name="adk_app_key_removed_desc_gen">%1$s удален. Пожалуйста, установите его снова, чтобы использовать все функции.</string>
+
+</resources>

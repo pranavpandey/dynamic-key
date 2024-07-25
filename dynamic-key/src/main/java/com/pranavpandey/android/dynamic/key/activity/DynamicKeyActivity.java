@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Pranav Pandey
+ * Copyright 2022-2024 Pranav Pandey
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import com.pranavpandey.android.dynamic.key.DynamicKey;
 import com.pranavpandey.android.dynamic.key.util.DynamicKeyUtils;
 import com.pranavpandey.android.dynamic.util.DynamicIntentUtils;
 import com.pranavpandey.android.dynamic.util.DynamicLinkUtils;
+import com.pranavpandey.android.dynamic.util.product.DynamicFlavor;
 
 /**
  * Base activity to implement the basic key operations.
@@ -53,11 +54,22 @@ public abstract class DynamicKeyActivity extends Activity implements DynamicKey 
     }
 
     /**
+     * Returns the build flavor to support third-party app stores.
+     *
+     * @return The build flavor to support third-party app stores.
+     *
+     * @see DynamicFlavor
+     */
+    public @DynamicFlavor String getProductFlavor() {
+        return DynamicFlavor.DEFAULT;
+    }
+
+    /**
      * Launch the fallback intent if the supported intent was unsuccessful.
      */
     protected void onLaunchFallbackIntent() {
         if (!DynamicKeyUtils.launch(this, getAppPackage())) {
-            DynamicLinkUtils.viewInGooglePlay(this, getAppPackage());
+            DynamicLinkUtils.viewApp(this, getAppPackage(), getProductFlavor());
         }
     }
 }

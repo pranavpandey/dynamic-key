@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Copyright 2022-2024 Pranav Pandey
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	   http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<resources>
+
+    <!-- Keywords -->
+    <string name="adk_buy">Acquistare</string>
+    <string name="adk_purchase">Acquistare</string>
+
+    <!-- License -->
+    <string name="adk_app_key_buy_desc">Acquista %1$s da %2$s per sbloccare le seguenti funzioni:</string>
+    <string name="adk_app_key_buy_desc_gen">Acquista %1$s da %2$s per sbloccare tutte le funzionalità.</string>
+    <string name="adk_app_key_installed">Installato</string>
+    <string name="adk_app_key_installed_desc">Grazie per aver acquistato %1$s. Ora, le seguenti funzionalità sono disponibili per l\'uso:</string>
+    <string name="adk_app_key_installed_desc_gen">Grazie per aver acquistato %1$s. Ora, tutte le funzionalità sono disponibili per l\'uso.</string>
+    <string name="adk_app_key_not_installed">Non installato</string>
+    <string name="adk_app_key_not_installed_desc">%1$s non è installato. Acquistalo da %2$s per sbloccare le seguenti funzionalità:</string>
+    <string name="adk_app_key_not_installed_desc_gen">%1$s non è installato. Acquistalo da %2$s per sbloccare tutte le funzionalità.</string>
+    <string name="adk_app_key_removed_desc">%1$s has been removed. Please install it again to use the following features:</string>
+    <string name="adk_app_key_removed_desc_gen">%1$s è stato rimosso. Installalo di nuovo per utilizzare tutte le funzionalità.</string>
+
+</resources>

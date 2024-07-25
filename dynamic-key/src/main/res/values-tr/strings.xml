@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Copyright 2022-2024 Pranav Pandey
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	   http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<resources>
+
+    <!-- Keywords -->
+    <string name="adk_buy">Satın almak</string>
+    <string name="adk_purchase">Satın almak</string>
+
+    <!-- License -->
+    <string name="adk_app_key_buy_desc">Aşağıdaki özelliklerin kilidini açmak için %2$s\'dan %1$s satın alın:</string>
+    <string name="adk_app_key_buy_desc_gen">Tüm özelliklerin kilidini açmak için %2$s\'dan %1$s satın alın.</string>
+    <string name="adk_app_key_installed">Yüklü</string>
+    <string name="adk_app_key_installed_desc">%1$s satın aldığınız için teşekkürler. Artık, aşağıdaki özellikleri kullanabilirsiniz:</string>
+    <string name="adk_app_key_installed_desc_gen">%1$s satın aldığınız için teşekkürler. Şimdi, tüm özellikler kullanıma hazır.</string>
+    <string name="adk_app_key_not_installed">Yüklü değil</string>
+    <string name="adk_app_key_not_installed_desc">%1$s yüklü değil. Aşağıdaki özelliklerin kilidini açmak için %2$s\'dan satın alın:</string>
+    <string name="adk_app_key_not_installed_desc_gen">%1$s yüklü değil. Tüm özelliklerin kilidini açmak için %2$s\'dan satın alın.</string>
+    <string name="adk_app_key_removed_desc">%1$s kaldırıldı. Aşağıdaki özellikleri kullanmak için lütfen tekrar yükleyin:</string>
+    <string name="adk_app_key_removed_desc_gen">%1$s kaldırıldı. Tüm özellikleri kullanmak için lütfen tekrar yükleyin.</string>
+
+</resources>
