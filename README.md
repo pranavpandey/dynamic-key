@@ -1,13 +1,14 @@
-<img src="./graphics/icon.png" width="160" height="160" align="right" hspace="20">
+<img src="./graphics/icon.png" height="160">
 
 # Dynamic Key
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Release](https://img.shields.io/maven-central/v/com.pranavpandey.android/dynamic-key)](https://search.maven.org/artifact/com.pranavpandey.android/dynamic-key)
 
-A library to use other apps as a key to unlock features in the primary app on Android 
-4.0 (API 14) and above.
+**A library to use other apps as a key to unlock features in the primary app on Android 
+4.0 (API 14) and above.**
 
+> [!IMPORTANT]
 > It uses [AndroidX][androidx] so, first [migrate][androidx-migrate] your project to AndroidX.
 <br/>It is dependent on Java 8 due to the dependency on [Dynamic Utils][dynamic-utils].
 <br/>Since v1.1.1, it is targeting Java 17 to provide maximum compatibility.
